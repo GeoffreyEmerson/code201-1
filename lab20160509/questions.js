@@ -12,18 +12,19 @@ if (gamerYN === 'Y') {
 } else if (gamerYN === 'N') {
   gamer.textContent = 'Really? For the sake of this exercise, would you mind pretending that you are? (I\'m just going to pretend like you answered Y.)';
 } else {
-  gamer.textContent = 'Not much for following directions, eh? ¯\_(ツ)_/¯  Ok, next time!';
+  gamer.textContent = 'Not much for following directions, eh? ¯\_(ツ)_/¯';
+  gamer.textContent = 'I get it, but the rules of this exercise require that I ask you 3 more questions. So maybe just play along for a little bit longer, yes?';
 }
 
 var favGame = prompt('What\'s you\'re favorite game?');
-if (favGame === 'Destiny' || 'destiny') {
+if (favGame === 'Destiny') {
   vgame.textContent = 'Hello, fellow Guardian! I knew you were cool from the minute you started typing.';
 } else {
   vgame.textContent = 'Um, yeah. ' + favGame + ' sounds cool and all, but I think we all know that "Destiny" is the best. Let\'s agree to disagree, shall we? Moving on... ';
 }
 
-var system = prompt('X-Box or Play Station?');
-var style = prompt('PCP or PVP?');
+var system = prompt('Xbox or PlayStation?');
+var style = prompt('PVE or PVP?');
 var sleep = prompt('Do you regularly burn the midnight oil? Y or N');
 if (sleep === 'Y') {
   gamerLevel.textContent = 'Props. ' + system + ' combined with ' + style + ' and no sleep? Respect!';
