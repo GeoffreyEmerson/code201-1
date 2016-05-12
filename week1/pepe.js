@@ -2,9 +2,12 @@
 var wooTestPepe = document.getElementById('wooTestPepe');
 var bonusQ = document.getElementById('bonusQ');
 
+var userName = prompt('Here we go! Let\'s start by establishing your woo-worthy identity. What should we call you?');
+alert(userName + ', huh? Nice. Definitely a swoon-worthy name.');
+
 var keepAsking = true;
 while (keepAsking) {
-  var confidence = prompt('Let\'s get started. Are you a Master of Woo? Y or N').toUpperCase();
+  var confidence = prompt('So, ' + userName + '. Are you a Master of Woo? Y or N').toUpperCase();
   console.log('confidence: ' + confidence);
 
   if (confidence === 'Y') {
@@ -28,11 +31,19 @@ var year = today.getFullYear();
 var agePepe = (year - 1945);
 console.log(agePepe);
 
+var numTries = 0;
 keepAsking = true; //Reset keepAsking to True after previous while loop set it to false
 
 while (keepAsking) {
+  numTries++; //equivalent to numTries = numTries + 1;
   var age = Number(prompt('How old is Pepé and his old school charm?'));
-  if (age === agePepe) {
+  if (isNaN(age)) {
+    alert('Hhmmm... that didn\'t work. Were you trying to write out his age? Try again by typing a number.');
+  }
+  if (numTries >= 5) {
+    alert('Good effort, but every Master of Woo knows that time is of the essence. Plus you\'ve reached the maximum number of attempts. Let\'s move on, shall we?');
+    break;
+  } else if (age === agePepe) {
     alert('Outstanding. 71 is correct!');
     keepAsking = false;
   } else if (age < 68) {
@@ -41,8 +52,6 @@ while (keepAsking) {
     alert('Come on now, he\'s old school, but not that old school! Guess again.');
   } else if (age === (68 || 69 || 70 || 72 || 73 || 74)) {
     alert('So close! Your guess is off by just a little. Try again!');
-  } else {
-    alert('Please try again by typing a number.');
   }
 } // Close of While loop for Pepé's age
 
