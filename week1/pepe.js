@@ -1,13 +1,22 @@
-//Code 201 Week 1 Lab - Tuesday 20160510
+//Code 201 Week 1 Lab - Thursday 20160512
 var wooTestPepe = document.getElementById('wooTestPepe');
 var bonusQ = document.getElementById('bonusQ');
 
-var userName = prompt('Here we go! Let\'s start by establishing your woo-worthy identity. What should we call you?');
+var introQuestions = ['Here we go! Let\'s start by establishing your woo-worthy identity. What should we call you?',
+                      'Are you a Master of Woo? Y or N'];
+var quizQuestions = ['What is the key to creating a masterful "swoosh"?',
+                     'How do we describe Pepé\'s black-and-white style?',
+                     'What nationality is Pepé?',
+                     'How old is Pepé and his old school charm?',
+                     'For an additional bonus of 2 points, Name one of the individuals who gave Pepé his woo-worthy voice.'];
+var answers = ['GEL', 'CLASSICALLY MINIMALIST', 'FRENCH', 71];
+
+var userName = prompt(introQuestions[0]);
 alert(userName + ', huh? Nice. Definitely a swoon-worthy name.');
 
 var keepAsking = true;
 while (keepAsking) {
-  var confidence = prompt('So, ' + userName + '. Are you a Master of Woo? Y or N').toUpperCase();
+  var confidence = prompt('So, ' + userName + '. ' + introQuestions[1]).toUpperCase();
   console.log('confidence: ' + confidence);
 
   if (confidence === 'Y') {
@@ -21,9 +30,9 @@ while (keepAsking) {
   }
 } // close of While loop for user confidence
 
-var gel = prompt('What is the key to creating a masterful "swoosh"?').toUpperCase();
-var style = prompt('How do we describe Pepé\'s black-and-white style?').toUpperCase();
-var nationality = prompt('What nationality is Pepé?').toUpperCase();
+var gel = prompt(quizQuestions[0]).toUpperCase();
+var style = prompt(quizQuestions[1]).toUpperCase();
+var nationality = prompt(quizQuestions[2]).toUpperCase();
 
 // Determining Pepe's age based on current year
 var today = new Date();
@@ -36,7 +45,7 @@ keepAsking = true; //Reset keepAsking to True after previous while loop set it t
 
 while (keepAsking) {
   numTries++; //equivalent to numTries = numTries + 1;
-  var age = Number(prompt('How old is Pepé and his old school charm?'));
+  var age = Number(prompt(quizQuestions[3]));
   if (isNaN(age)) {
     alert('Hhmmm... that didn\'t work. Were you trying to write out his age? Try again by typing a number.');
   }
@@ -56,12 +65,11 @@ while (keepAsking) {
 } // Close of While loop for Pepé's age
 
 // Tallying the user's score
-var questions = [gel, style, nationality, age];
-var answers = ['GEL', 'CLASSICALLY MINIMALIST', 'FRENCH', 71];
+var playerAnswers = [gel, style, nationality, age];
 var score = 0;
 
 for (i = 0; i < questions.length; i++) {
-  if (questions[i] === answers[i]) {
+  if (playerAnswers[i] === answers[i]) {
     score++;
     console.log(score);
   }
@@ -70,7 +78,7 @@ for (i = 0; i < questions.length; i++) {
 wooTestPepe.textContent = 'You answered ' + score + ' out of 4 questions correctly.';
 
 // Bonus question re: who voiced Pepé Le Pew
-var bonus = prompt('For an additional bonus of 2 points, Name one of the individuals who gave Pepé his woo-worthy voice.').toUpperCase();
+var bonus = prompt(quizQuestions[4]).toUpperCase();
 
 var voice = ['MEL BLANC', 'MAURICE LAMARCHE', 'BRUCE LANOIL', 'GREG BURSON', 'JOE ALASKEY', 'BILLY WEST', 'JEFF BENNETT', 'RENE AUBERJNOIS', 'JEFF BERGMAN'];
 for (i = 0; i < voice.length; i++) {
