@@ -2,9 +2,12 @@
 var wooTestPepe = document.getElementById('wooTestPepe');
 var bonusQ = document.getElementById('bonusQ');
 
+var userName = prompt('Here we go! Let\'s start by establishing your woo-worthy identity. What should we call you?');
+alert(userName + ', huh? Nice. Definitely a swoon-worthy name.');
+
 var keepAsking = true;
 while (keepAsking) {
-  var confidence = prompt('Let\'s get started. Are you a Master of Woo? Y or N').toUpperCase();
+  var confidence = prompt('So, ' + userName + '. Are you a Master of Woo? Y or N').toUpperCase();
   console.log('confidence: ' + confidence);
 
   if (confidence === 'Y') {

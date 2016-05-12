@@ -1,0 +1,17 @@
+/* CSS stylesheet for Code 201 Week 1 Lab - Question Game */
+
+body {
+  background-color: #E2BBFF;
+}
+
+h1 {
+  color: #4B0082;
+}
+
+h4 {
+  color: #FF030D;
+}
+
+ul, ol {
+  color: #422C2F
+}
